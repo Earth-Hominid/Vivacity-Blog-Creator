@@ -4,6 +4,9 @@ const port = process.env.PORT || 8001;
 
 const app = express();
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
 app.use('/api/blogs', require('./routes/blogRoutes'));
 
 app.listen(port, () => {
