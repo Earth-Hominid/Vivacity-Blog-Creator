@@ -1,0 +1,19 @@
+{
+  "name": "blog-backend",
+  "version": "1.0.0",
+  "description": "Blog maker backend api.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Earth-Hominid/blog-maker-api.git"
+  },
+  "author": "Chris Doll",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Earth-Hominid/blog-maker-api/issues"
+  },
+  "homepage": "https://github.com/Earth-Hominid/blog-maker-api#readme"
+}
