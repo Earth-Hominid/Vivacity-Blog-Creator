@@ -2,7 +2,7 @@
 // @route GET /api/blogs
 // @access is Private
 
-const getBlogs = (req, res) => {
+const getBlogs = async (req, res) => {
   res.status(200).json({ message: 'Get Blogs!' });
 };
 
@@ -10,7 +10,7 @@ const getBlogs = (req, res) => {
 // @route POST /api/blogs
 // @access Private
 
-const createBlog = (req, res) => {
+const createBlog = async (req, res) => {
   res.status(200).json({ message: 'Create blog' });
 };
 
@@ -18,7 +18,7 @@ const createBlog = (req, res) => {
 // @route PUT /api/blogs/:id
 // @access Private
 
-const updateBlog = (req, res) => {
+const updateBlog = async (req, res) => {
   res.status(200).json({ message: `Update Blog ${req.params.id}` });
 };
 
@@ -26,7 +26,7 @@ const updateBlog = (req, res) => {
 // @ route DELETE /api/blogs/:id
 // @access Private
 
-const deleteBlog = (req, res) => {
+const deleteBlog = async (req, res) => {
   res.status(200).json({ message: `Delete Blog ${req.params.id}` });
 };
 
