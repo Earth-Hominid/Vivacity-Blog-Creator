@@ -1,11 +1,13 @@
 asyncHandler = require('express-async-handler');
+const Blog = require('../models/blog');
 
 // @Desc Get blogs
 // @route GET /api/blogs
 // @access is Private
 
 const getBlogs = asyncHandler(async (req, res) => {
-  res.status(200).json({ message: 'Get Blogs!' });
+  const blogs = await Blog.find({ user: req.user.id });
+  res.status(200).json(blogs);
 });
 
 // @desc Create blog
@@ -13,7 +15,17 @@ const getBlogs = asyncHandler(async (req, res) => {
 // @access Private
 
 const createBlog = asyncHandler(async (req, res) => {
-  res.status(200).json({ message: 'Create blog' });
+  if (!req.body.title && !req.body.content) {
+    res.status(400);
+    throw new Error('Please add a text field');
+  }
+
+  const blog = await Blog.create({
+    title: req.body.title,
+    content: req.body.content,
+    user: req.user.id,
+  });
+  res.status(200).json(blog);
 });
 
 // @desc Update blog post
@@ -21,7 +33,18 @@ const createBlog = asyncHandler(async (req, res) => {
 // @access Private
 
 const updateBlog = asyncHandler(async (req, res) => {
-  res.status(200).json({ message: `Update Blog ${req.params.id}` });
+  const blog = await Blog.findById(req.params.id);
+
+  if (!blog) {
+    res.status(400);
+    throw new Error('Blog not found');
+  }
+
+  const updatedBlog = await Blog.findByIdAndUpdate(req.params.id, req.body, {
+    new: true,
+  });
+
+  res.status(200).json(updatedBlog);
 });
 
 // @desc Delete blog post
@@ -29,7 +52,16 @@ const updateBlog = asyncHandler(async (req, res) => {
 // @access Private
 
 const deleteBlog = asyncHandler(async (req, res) => {
-  res.status(200).json({ message: `Delete Blog ${req.params.id}` });
+  const blog = await Blog.findById(req.params.id);
+
+  if (!blog) {
+    res.status(400);
+    throw new Error('Blog not found');
+  }
+
+  await blog.remove();
+  // return the id
+  res.status(200).json({ id: req.params.id });
 });
 
 module.exports = {
