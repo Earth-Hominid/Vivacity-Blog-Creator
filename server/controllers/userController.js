@@ -80,7 +80,16 @@ const loginUser = asyncHandler(async (req, res) => {
 // @access Private
 
 const getMe = asyncHandler(async (req, res) => {
-  res.json({ message: 'User data display' });
+  const { _id, first_name, last_name, alias, email } = await User.findById(
+    req.user.id
+  );
+
+  res.status(200).json({
+    id: _id,
+    name: first_name + ' ' + last_name,
+    alias,
+    email,
+  });
 });
 
 module.exports = { registerUser, loginUser, getMe };
