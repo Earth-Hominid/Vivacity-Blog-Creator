@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server/server/.js",
-    "devstart": "nodemon server/server.js"
+    "devstart": "nodemon server/server.js",
+    "client": "npm start --prefix frontend"
   },
   "repository": {
     "type": "git",
