@@ -19,6 +19,9 @@ const BlogSchema = mongoose.Schema(
       min: 2,
       max: 50,
     },
+    publish: {
+      default: false,
+    },
   },
   { timestamps: true }
 );
