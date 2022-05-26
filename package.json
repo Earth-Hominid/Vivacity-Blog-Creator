@@ -1,12 +1,13 @@
 {
-  "name": "blog-backend",
+  "name": "blog-maker",
   "version": "1.0.0",
   "description": "Blog maker backend api.",
   "main": "server.js",
   "scripts": {
     "start": "node server/server/.js",
     "devstart": "nodemon server/server.js",
-    "client": "npm start --prefix frontend"
+    "blog": "npm start --prefix blog-user-front-end",
+    "client": "npm start --prefix client"
   },
   "repository": {
     "type": "git",
