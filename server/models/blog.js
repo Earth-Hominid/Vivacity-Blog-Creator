@@ -23,7 +23,8 @@ const BlogSchema = mongoose.Schema(
       default: false,
     },
   },
+
   { timestamps: true }
 );
 
-module.exports = mongoose.model('Goal', BlogSchema);
+module.exports = mongoose.model('Blog', BlogSchema);
