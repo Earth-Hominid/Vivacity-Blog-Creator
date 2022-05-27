@@ -3,12 +3,13 @@ import { useNavigate } from 'react-router-dom';
 const Login = () => {
   return (
     <>
-      <h1 className=" font-[PaytoneOne] mt-6 text-4xl font-bold text-indigo-500 text-center">
-        Welcome Back!
-      </h1>
-      <div className="flex w-full justify-center ">
-        <div
-          className="
+      <section className="h-screen bg-slate-100">
+        <h1 className=" font-[PaytoneOne] pt-8 text-4xl font-bold text-[#2A2F3D] text-center">
+          Welcome Back!
+        </h1>
+        <div className="flex w-full justify-center ">
+          <div
+            className="
         w-full 
         max-w-md 
         m-10 
@@ -19,23 +20,23 @@ const Login = () => {
         border-slate-300 
         shadow-lg
         rounded-md"
-        >
-          <form action="" method="POST" className="mt-8 text-sm md:text-lg">
-            <div className="relative">
-              <input
-                id="email"
-                type="email"
-                name="email"
-                required=""
-                placeholder="Email address"
-                className="peer h-10 w-full border-b-2 border-slate-400 focus:outline-none focus:border-indigo-600 placeholder-transparent
+          >
+            <form action="" method="POST" className="mt-8 text-sm md:text-lg">
+              <div className="relative">
+                <input
+                  id="email"
+                  type="email"
+                  name="email"
+                  required=""
+                  placeholder="Email address"
+                  className="peer h-10 w-full border-b-2 border-slate-400 focus:outline-none focus:border-sky-500 placeholder-transparent
                 invalid:border-pink-500 
                 invalid:text-pink-600
                 focus:invalid:border-pink-500 focus:invalid:ring-pink-500"
-              />
-              <label
-                for="email"
-                className="
+                />
+                <label
+                  for="email"
+                  className="
                 text-stone-800 
                 absolute 
                 left-0  
@@ -44,22 +45,22 @@ const Login = () => {
                 peer-focus:-top-3.5
                 peer-foucs:text-stone-600
                 peer-focus:text-sm"
-              >
-                Email address
-              </label>
-            </div>
-            <div className="mt-8 relative">
-              <input
-                id="password"
-                name="password"
-                required=""
-                type="text"
-                placeholder="Enter your password"
-                className="peer h-10 w-full border-b-2 border-slate-400 focus:outline-none focus:border-indigo-600 placeholder-transparent"
-              />
-              <label
-                for="password"
-                className="
+                >
+                  Email address
+                </label>
+              </div>
+              <div className="mt-8 relative">
+                <input
+                  id="password"
+                  name="password"
+                  required=""
+                  type="text"
+                  placeholder="Enter your password"
+                  className="peer h-10 w-full border-b-2 border-slate-400 focus:outline-none focus:border-sky-500 placeholder-transparent"
+                />
+                <label
+                  for="password"
+                  className="
               absolute
               left-0
               -top-3.5
@@ -72,13 +73,13 @@ const Login = () => {
               peer-focus:-top-3.5
               peer-foucs:text-stone-600
               peer-focus:text-sm"
-              >
-                Password
-              </label>
-            </div>
-            <div className="mt-10 mb-12">
-              <button
-                className="
+                >
+                  Password
+                </label>
+              </div>
+              <div className="mt-10 mb-12">
+                <button
+                  className="
               font-extrabold
               font-[Montserrat]
               bg-sky-500 
@@ -86,18 +87,19 @@ const Login = () => {
               text-white
               w-full 
               text-base 
-              hover:bg-sky-600 
-              hover:border-sky-600
+              hover:bg-white
+              hover:text-sky-500
               border-2
               border-sky-500
               "
-              >
-                Submit
-              </button>
-            </div>
-          </form>
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
-      </div>
+      </section>
     </>
   );
 };
