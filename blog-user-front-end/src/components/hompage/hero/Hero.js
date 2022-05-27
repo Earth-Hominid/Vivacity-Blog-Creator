@@ -1,6 +1,15 @@
-import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Hero = () => {
+  const navigate = useNavigate();
+
+  const goToSignInPage = () => {
+    navigate('/login');
+  };
+
+  const goToRegisterPage = () => {
+    navigate('/register');
+  };
   return (
     <>
       <section className=" bg-[#FAF5ED] pt-2 w-full h-screen pb-10">
@@ -17,6 +26,7 @@ const Hero = () => {
         </div>
         <div className="flex justify-center mt-10">
           <button
+            onClick={goToSignInPage}
             className="
           text-lg 
           font-bold 
@@ -33,6 +43,7 @@ const Hero = () => {
             Already a member?
           </button>
           <button
+            onClick={goToRegisterPage}
             className="
           text-lg 
           font-bold
