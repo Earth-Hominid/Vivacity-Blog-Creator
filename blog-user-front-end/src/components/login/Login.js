@@ -1,6 +1,25 @@
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+  const [registerFormData, setRegisterFormData] = useState({
+    email: '',
+    password: '',
+  });
+
+  const { email, password } = registerFormData;
+
+  const onChange = (e) => {
+    setRegisterFormData((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <>
       <section className="h-screen bg-slate-100">
@@ -21,12 +40,19 @@ const Login = () => {
         shadow-lg
         rounded-md"
           >
-            <form action="" method="POST" className="mt-8 text-sm md:text-lg">
+            <form
+              onSubmit={onSubmit}
+              action=""
+              method="POST"
+              className="mt-8 text-sm md:text-lg"
+            >
               <div className="relative">
                 <input
                   id="email"
                   type="email"
                   name="email"
+                  value={email}
+                  onChange={onChange}
                   required=""
                   placeholder="Email address"
                   className="peer h-10 w-full border-b-2 border-slate-400 focus:outline-none focus:border-sky-500 placeholder-transparent
@@ -53,8 +79,10 @@ const Login = () => {
                 <input
                   id="password"
                   name="password"
+                  value={password}
+                  onChange={onChange}
                   required=""
-                  type="text"
+                  type="password"
                   placeholder="Enter your password"
                   className="peer h-10 w-full border-b-2 border-slate-400 focus:outline-none focus:border-sky-500 placeholder-transparent"
                 />
@@ -79,6 +107,7 @@ const Login = () => {
               </div>
               <div className="mt-10 mb-12">
                 <button
+                  type="submit"
                   className="
               font-extrabold
               font-[Montserrat]

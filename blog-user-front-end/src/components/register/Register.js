@@ -13,6 +13,17 @@ const Register = () => {
   const { first_name, last_name, email, alias, password, password2 } =
     registerFormData;
 
+  const onChange = (e) => {
+    setRegisterFormData((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <>
       <section className="h-screen bg-slate-100">
@@ -34,15 +45,18 @@ const Register = () => {
         rounded-md"
           >
             <form
+              onSubmit={onSubmit}
               action=""
               method="POST"
-              className="mt-6 text-sm md:text-base "
+              className="mt-6 text-sm md:text-base"
             >
               <div className="relative">
                 <input
                   id="first_name"
                   type="text"
                   name="first_name"
+                  value={first_name}
+                  onChange={onChange}
                   required=""
                   min="1"
                   max="50"
@@ -74,6 +88,8 @@ const Register = () => {
                   id="last_name"
                   name="last_name"
                   required=""
+                  value={last_name}
+                  onChange={onChange}
                   min="1"
                   max="50"
                   type="text"
@@ -105,7 +121,9 @@ const Register = () => {
                   name="email"
                   required=""
                   type="email"
-                  placeholder="Username"
+                  value={email}
+                  onChange={onChange}
+                  placeholder="Email"
                   className="peer h-10 w-full border-b-2 border-slate-400 focus:outline-none focus:border-indigo-500 placeholder-transparent
                 invalid:border-pink-500 
                 invalid:text-pink-600
@@ -138,6 +156,8 @@ const Register = () => {
                   type="text"
                   min="8"
                   placeholder="Username"
+                  value={alias}
+                  onChange={onChange}
                   className="peer h-10 w-full border-b-2 border-slate-400 focus:outline-none focus:border-indigo-500 placeholder-transparent"
                 />
                 <label
@@ -165,6 +185,8 @@ const Register = () => {
                   name="password"
                   required=""
                   type="password"
+                  value={password}
+                  onChange={onChange}
                   min="3"
                   max="15"
                   placeholder="Password"
@@ -195,6 +217,8 @@ const Register = () => {
                   name="password2"
                   required=""
                   type="password"
+                  value={password2}
+                  onChange={onChange}
                   min="3"
                   max="15"
                   placeholder="Confirm password"
@@ -221,10 +245,18 @@ const Register = () => {
               </div>
               <div className="mt-6 mb-12">
                 <button
-                  className="bg-indigo-500 p-2 rounded-md text-white w-full text-base hover:bg-white
-              border-2
-              border-indigo-500
-              hover:text-indigo-500"
+                  type="submit"
+                  className="
+                  bg-indigo-500 
+                  p-2 
+                  rounded-md 
+                  text-white 
+                  w-full 
+                  text-base 
+                  hover:bg-white
+                  border-2
+                border-indigo-500
+                hover:text-indigo-500"
                 >
                   Submit
                 </button>
