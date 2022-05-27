@@ -7,7 +7,8 @@
     "start": "node server/server/.js",
     "devstart": "nodemon server/server.js",
     "blog": "npm start --prefix blog-user-front-end",
-    "client": "npm start --prefix client"
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run devstart\" \"npm run blog\""
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,7 @@
     "mongoose": "^6.3.3"
   },
   "devDependencies": {
+    "concurrently": "^7.2.1",
     "nodemon": "^2.0.16"
   }
 }

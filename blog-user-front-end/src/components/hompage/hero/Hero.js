@@ -12,7 +12,7 @@ const Hero = () => {
   };
   return (
     <>
-      <section className=" bg-[#FAF5ED] pt-2 w-full h-screen pb-10">
+      <section className=" bg-slate-100 pt-2 w-full h-screen pb-10">
         <div className="pt-5 mx-10 text-center lg:mx-20 xl:mx-40">
           <h1 className="text-5xl lg:text-6xl font-[PaytoneOne] text-[#2A2F3D]">
             Welcome to our corner of the internet!
@@ -37,7 +37,7 @@ const Hero = () => {
           text-white 
           border-2 
           border-sky-500
-          hover:bg-[#FAF5ED]
+          hover:bg-slate-100
           hover:text-sky-500"
           >
             Already a member?
