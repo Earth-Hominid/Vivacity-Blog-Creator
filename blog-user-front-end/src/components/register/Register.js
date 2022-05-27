@@ -4,7 +4,7 @@ const Register = () => {
   return (
     <>
       <section className="h-screen bg-slate-100">
-        <h1 className="px-2 pt-8 mb-4 text-4xl font-[PaytoneOne] selection:font-bold text-[#2A2F3D] text-center">
+        <h1 className="px-2 pt-8 mb-4 text-4xl font-[PaytoneOne] selection:font-bold text-zinc-700 text-center">
           Register below to become a member!
         </h1>
         <div className="flex w-full justify-center ">

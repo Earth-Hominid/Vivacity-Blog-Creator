@@ -4,7 +4,7 @@ const Login = () => {
   return (
     <>
       <section className="h-screen bg-slate-100">
-        <h1 className=" font-[PaytoneOne] pt-8 text-4xl font-bold text-[#2A2F3D] text-center">
+        <h1 className=" font-[PaytoneOne] pt-8 text-4xl text-zinc-700 text-center">
           Welcome Back!
         </h1>
         <div className="flex w-full justify-center ">
