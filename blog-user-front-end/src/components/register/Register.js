@@ -1,6 +1,18 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 
 const Register = () => {
+  const [registerFormData, setRegisterFormData] = useState({
+    first_name: '',
+    last_name: '',
+    email: '',
+    alias: '',
+    password: '',
+    password2: '',
+  });
+
+  const { first_name, last_name, email, alias, password, password2 } =
+    registerFormData;
+
   return (
     <>
       <section className="h-screen bg-slate-100">
@@ -41,7 +53,7 @@ const Register = () => {
                 focus:invalid:border-pink-500 focus:invalid:ring-pink-500"
                 />
                 <label
-                  for="first_name"
+                  htmlFor="first_name"
                   className="
                 text-stone-800 
                 absolute 
@@ -69,7 +81,7 @@ const Register = () => {
                   className="peer h-10 w-full border-b-2 border-slate-400 focus:outline-none focus:border-indigo-500 placeholder-transparent"
                 />
                 <label
-                  for="last_name"
+                  htmlFor="last_name"
                   className="
               absolute
               left-0
@@ -100,7 +112,7 @@ const Register = () => {
                 focus:invalid:border-pink-500 focus:invalid:ring-pink-500"
                 />
                 <label
-                  for="email"
+                  htmlFor="email"
                   className="
               absolute
               left-0
@@ -129,7 +141,7 @@ const Register = () => {
                   className="peer h-10 w-full border-b-2 border-slate-400 focus:outline-none focus:border-indigo-500 placeholder-transparent"
                 />
                 <label
-                  for="username"
+                  htmlFor="username"
                   className="
               absolute
               left-0
@@ -159,7 +171,7 @@ const Register = () => {
                   className="peer h-10 w-full border-b-2 border-slate-400 focus:outline-none focus:border-indigo-500 placeholder-transparent"
                 />
                 <label
-                  for="password"
+                  htmlFor="password"
                   className="
               absolute
               left-0
@@ -175,6 +187,36 @@ const Register = () => {
               peer-focus:text-sm"
                 >
                   Password
+                </label>
+              </div>
+              <div className="mt-4 relative">
+                <input
+                  id="password2"
+                  name="password2"
+                  required=""
+                  type="password"
+                  min="3"
+                  max="15"
+                  placeholder="Confirm password"
+                  className="peer h-10 w-full border-b-2 border-slate-400 focus:outline-none focus:border-indigo-500 placeholder-transparent"
+                />
+                <label
+                  htmlFor="password2"
+                  className="
+              absolute
+              left-0
+              -top-3.5
+              text-sm 
+              text-stone-800
+              transition-all
+              peer-placeholder-shown:text-base
+              peer-placeholder-shown:text-stone-600
+              peer-placeholder-shown:top-2
+              peer-focus:-top-3.5
+              peer-foucs:text-stone-600
+              peer-focus:text-sm"
+                >
+                  Confirm password
                 </label>
               </div>
               <div className="mt-6 mb-12">

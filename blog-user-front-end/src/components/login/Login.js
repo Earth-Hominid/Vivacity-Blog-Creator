@@ -35,7 +35,7 @@ const Login = () => {
                 focus:invalid:border-pink-500 focus:invalid:ring-pink-500"
                 />
                 <label
-                  for="email"
+                  htmlFor="email"
                   className="
                 text-stone-800 
                 absolute 
@@ -59,7 +59,7 @@ const Login = () => {
                   className="peer h-10 w-full border-b-2 border-slate-400 focus:outline-none focus:border-sky-500 placeholder-transparent"
                 />
                 <label
-                  for="password"
+                  htmlFor="password"
                   className="
               absolute
               left-0
