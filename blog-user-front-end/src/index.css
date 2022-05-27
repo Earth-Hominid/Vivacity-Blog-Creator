@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'PaytoneOne';
+  src: url('./assets//fonts/PaytoneOne-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url(./assets//fonts/Montserrat-Regular.ttf);
+}
