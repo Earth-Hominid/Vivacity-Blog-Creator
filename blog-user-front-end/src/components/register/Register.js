@@ -1,4 +1,9 @@
 import { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import { register, reset } from '../../features/auth/authSlice';
+import LoadingSpinner from '../loading-spinner/LoadingSpinner';
 
 const Register = () => {
   const [registerFormData, setRegisterFormData] = useState({
@@ -13,6 +18,25 @@ const Register = () => {
   const { first_name, last_name, email, alias, password, password2 } =
     registerFormData;
 
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const { user, isLoading, isError, isSuccess, message } = useSelector(
+    (state) => state.auth
+  );
+
+  useEffect(() => {
+    if (isError) {
+      toast.error(message);
+    }
+
+    if (isSuccess || user) {
+      navigate('/dashboard');
+    }
+
+    dispatch(reset());
+  }, [user, isError, isSuccess, message, navigate, dispatch]);
+
   const onChange = (e) => {
     setRegisterFormData((prevState) => ({
       ...prevState,
@@ -22,7 +46,25 @@ const Register = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+
+    if (password !== password2) {
+      toast.error('Passwords do not match');
+    } else {
+      const userData = {
+        first_name,
+        last_name,
+        email,
+        alias,
+        password,
+      };
+
+      dispatch(register(userData));
+    }
   };
+
+  if (isLoading) {
+    return <LoadingSpinner />;
+  }
 
   return (
     <>
@@ -44,23 +86,18 @@ const Register = () => {
         shadow-lg
         rounded-md"
           >
-            <form
-              onSubmit={onSubmit}
-              action=""
-              method="POST"
-              className="mt-6 text-sm md:text-base"
-            >
+            <form onSubmit={onSubmit} className="mt-6 text-sm md:text-base">
               <div className="relative">
                 <input
-                  id="first_name"
                   type="text"
+                  id="first_name"
                   name="first_name"
                   value={first_name}
+                  placeholder="Firstname"
                   onChange={onChange}
                   required=""
                   min="1"
                   max="50"
-                  placeholder="Firstname"
                   className="peer h-10 w-full border-b-2 border-slate-400 focus:outline-none focus:border-indigo-500 placeholder-transparent
                 invalid:border-pink-500 
                 invalid:text-pink-600
@@ -150,18 +187,19 @@ const Register = () => {
               </div>
               <div className="mt-4 relative">
                 <input
-                  id="username"
-                  name="username"
+                  id="alias"
+                  name="alias"
                   required=""
                   type="text"
-                  min="8"
-                  placeholder="Username"
+                  min="1"
+                  max="50"
+                  placeholder="Alias"
                   value={alias}
                   onChange={onChange}
                   className="peer h-10 w-full border-b-2 border-slate-400 focus:outline-none focus:border-indigo-500 placeholder-transparent"
                 />
                 <label
-                  htmlFor="username"
+                  htmlFor="alias"
                   className="
               absolute
               left-0
@@ -176,7 +214,7 @@ const Register = () => {
               peer-foucs:text-stone-600
               peer-focus:text-sm"
                 >
-                  Username
+                  Alias
                 </label>
               </div>
               <div className="mt-4 relative">
@@ -215,12 +253,9 @@ const Register = () => {
                 <input
                   id="password2"
                   name="password2"
-                  required=""
                   type="password"
                   value={password2}
                   onChange={onChange}
-                  min="3"
-                  max="15"
                   placeholder="Confirm password"
                   className="peer h-10 w-full border-b-2 border-slate-400 focus:outline-none focus:border-indigo-500 placeholder-transparent"
                 />

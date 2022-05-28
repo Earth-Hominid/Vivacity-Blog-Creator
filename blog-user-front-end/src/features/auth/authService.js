@@ -5,7 +5,7 @@ import axios from 'axios';
 const API_URL = '/api/users/';
 
 // Register user
-const registerUser = async (userData) => {
+const register = async (userData) => {
   const response = await axios.post(API_URL, userData);
 
   // axios puts data inside an object called data
@@ -16,8 +16,8 @@ const registerUser = async (userData) => {
   return response.data;
 };
 
-const authenticationService = {
-  registerUser,
+const authService = {
+  register,
 };
 
-export default authenticationService;
+export default authService;

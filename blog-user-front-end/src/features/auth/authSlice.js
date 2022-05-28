@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import authenticationService from './authenticationService';
+import authService from './authService';
 
 // Get user from local storage with JWT. Local storage only stores strings so parse first.
 
@@ -13,11 +13,12 @@ const initialState = {
   message: '',
 };
 
+// Register user
 export const register = createAsyncThunk(
-  'authentication/register',
+  'auth/register',
   async (user, thunkAPI) => {
     try {
-      return await authenticationService.register(user);
+      return await authService.register(user);
     } catch (error) {
       const message =
         (error.response &&
@@ -31,7 +32,7 @@ export const register = createAsyncThunk(
 );
 
 export const authenticationSlice = createSlice({
-  name: 'authentication',
+  name: 'auth',
   initialState,
   reducers: {
     reset: (state) => {
@@ -46,7 +47,7 @@ export const authenticationSlice = createSlice({
       .addCase(register.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(register.fullfilled, (state, action) => {
+      .addCase(register.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
         state.user = action.payload;
