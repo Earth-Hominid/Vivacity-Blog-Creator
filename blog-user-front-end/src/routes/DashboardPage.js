@@ -1,5 +1,7 @@
+import Dashboard from '../components/Dashboard';
+
 const DashboardPage = () => {
-  return <div className="h-screen bg-slate-200"></div>;
+  return <Dashboard />;
 };
 
 export default DashboardPage;
