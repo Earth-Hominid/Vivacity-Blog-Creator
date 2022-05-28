@@ -14,7 +14,7 @@ const RouteSwitch = () => {
       <BrowserRouter>
         <Navigation />
         <Routes>
-          <Route path="/" element={<Homepage />} />
+          <Route path="/vivacity" element={<Homepage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/dashboard" element={<DashboardPage />} />
