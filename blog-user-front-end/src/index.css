@@ -141,3 +141,28 @@
     ),
     linear-gradient(90deg, #ffffff, #ffffff);
 }
+
+.dashboard-polka {
+  background-image: repeating-linear-gradient(
+      12deg,
+      rgb(255, 255, 255) 0px,
+      rgb(255, 255, 255) 19px,
+      transparent 19px,
+      transparent 21px
+    ),
+    repeating-linear-gradient(
+      165deg,
+      rgb(255, 255, 255) 0px,
+      rgb(255, 255, 255) 19px,
+      transparent 19px,
+      transparent 21px
+    ),
+    repeating-linear-gradient(
+      293deg,
+      rgb(255, 255, 255) 0px,
+      rgb(255, 255, 255) 19px,
+      transparent 19px,
+      transparent 21px
+    ),
+    linear-gradient(90deg, rgb(253, 76, 251), rgb(73, 233, 121));
+}

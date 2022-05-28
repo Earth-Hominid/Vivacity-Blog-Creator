@@ -18,14 +18,14 @@ const Dashboard = () => {
 
   return (
     <>
-      <section className="h-screen dashboard">
-        <div className="pt-5 text-center">
-          <h1 className="text-3xl text-slate-600 font-bold font-[PaytoneOne]">
-            Welcome back {user && user.alias}
+      <section className="h-screen dashboard-polka">
+        <div className="pt-8 text-center">
+          <h1 className="text-4xl text-indigo-500 font-bold font-[PaytoneOne]">
+            Welcome back {user && user.alias}!
           </h1>
         </div>
-        <div className="m-5 font-bold text-slate-500 ">
-          <p className="ml-5 text-sm">
+        <div className=" m-8 p-4 w-60% h-auto rounded-xl">
+          <p className="ml-5 text-sm text-slate-500 font-semibold">
             “Action is the foundational key to all success.” – Pablo Picasso.
           </p>
           <div className="flex flex-col">
@@ -48,7 +48,7 @@ const Dashboard = () => {
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    d="M12 4v16m8-8H4"
+                    d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
                   />
                 </svg>
               </div>
