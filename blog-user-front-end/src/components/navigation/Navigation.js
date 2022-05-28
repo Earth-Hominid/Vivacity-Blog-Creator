@@ -11,7 +11,7 @@ const Navigation = () => {
   const logoutUser = () => {
     dispatch(logout());
     dispatch(reset());
-    navigate('/');
+    navigate('/vivacity');
   };
 
   return (
@@ -45,6 +45,16 @@ const Navigation = () => {
               >
                 Logout
               </button>
+            </div>
+            <div>
+              <Link to="/dashboard">
+                <p
+                  className="font-[Montserrat] py-1 
+            px-2 font-bold text-base hover:text-sky-500"
+                >
+                  Dashboard
+                </p>
+              </Link>
             </div>
           </>
         ) : (
@@ -81,7 +91,7 @@ const Navigation = () => {
                   Sign up
                 </p>
               </Link>
-            </div>{' '}
+            </div>
           </>
         )}
       </div>
