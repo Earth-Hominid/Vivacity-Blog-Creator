@@ -39,6 +39,10 @@ const registerUser = asyncHandler(async (req, res) => {
 
   if (user) {
     res.status(201).json({
+      _id: user.id,
+      name: first_name + ' ' + last_name,
+      email: user.email,
+      alias: user.alias,
       token: generateToken(user._id),
     });
   } else {
@@ -76,16 +80,7 @@ const loginUser = asyncHandler(async (req, res) => {
 // @access Private
 
 const getMe = asyncHandler(async (req, res) => {
-  const { _id, first_name, last_name, alias, email } = await User.findById(
-    req.user.id
-  );
-
-  res.status(200).json({
-    id: _id,
-    name: first_name + ' ' + last_name,
-    alias,
-    email,
-  });
+  res.status(200).json(req.user);
 });
 
 module.exports = { registerUser, loginUser, getMe };
