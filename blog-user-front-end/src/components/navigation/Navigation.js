@@ -14,12 +14,16 @@ const Navigation = () => {
     navigate('/vivacity');
   };
 
+  const goHome = () => {
+    navigate('/vivacity');
+  };
+
   return (
     <nav className="h-12 whitespace-nowrap flex flex-row items-center sticky top-0 z-50 bg-[#FFFEFD]">
       <div>
-        <Link to="/vivacity">
-          <img className=" cursor-pointer w-44" src={Logo} alt="barker logo" />
-        </Link>
+        <button className="p-1" onClick={goHome}>
+          <img className="w-40" src={Logo} alt="barker logo" />
+        </button>
       </div>
       <div className="flex flex-row align-items justify-end w-full space-x-6 mr-10">
         {user ? (
