@@ -3,22 +3,14 @@ import Spinner from '../../assets/icons/spinner.png';
 const LoadingSpinner = () => {
   return (
     <>
-      <div
-        className="
-        flex
-        align-center
-        justify-center
-        z-[5000]
-        inset-0
-      fixed"
-      >
-        <div
-          className="
-          h-16
-          w-16
-          animate-spin"
-        >
-          {Spinner}
+      <div className="flex justify-center items-center  inset-0 fixed bg-white">
+        <div className="animate-spin h-32 w-32">
+          <img
+            className="
+             cursor-pointer w-44"
+            src={Spinner}
+            alt="spinner logo"
+          />
         </div>
       </div>
     </>
