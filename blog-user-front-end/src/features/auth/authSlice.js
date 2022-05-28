@@ -2,7 +2,6 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import authService from './authService';
 
 // Get user from local storage with JWT. Local storage only stores strings so parse first.
-
 const user = JSON.parse(localStorage.getItem('user'));
 
 const initialState = {

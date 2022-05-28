@@ -17,7 +17,7 @@ const Dashboard = () => {
 
   return (
     <>
-      <h1>Dashboard</h1>
+      <section className="h-screen bg-slate-100"></section>
     </>
   );
 };
