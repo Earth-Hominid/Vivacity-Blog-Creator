@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import Welcome from './Welcome';
-import BlogFormModal from './modals/BlogFormModal';
+import CreateBlogModal from './modals/CreateBlogModal';
 import LoadingSpinner from '../loading-spinner/LoadingSpinner';
 
 const Dashboard = () => {
@@ -32,8 +32,7 @@ const Dashboard = () => {
   return (
     <>
       {initialPage && <Welcome user={user} openModal={openModal} />}
-
-      {modal && <BlogFormModal close={closeModal} />}
+      {modal && <CreateBlogModal closeModal={closeModal} />}
     </>
   );
 };

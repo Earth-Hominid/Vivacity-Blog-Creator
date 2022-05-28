@@ -25,31 +25,24 @@ const BlogForm = () => {
   };
 
   return (
-    <section
-      className="flex flex-col items-center border-2 rounded-lg shadow-lg m-5
-    md:m-10
-    lg:m-20 border-slate-300 text-lg"
-    >
+    <section className="bg-white flex flex-col items-center mt-2 md:m-10 lg:m-20 text-lg">
       <form onSubmit={handleSubmit}>
-        <div
-          className="
-        mt-4 flex flex-col space-y-4 font-[Montserrat]
-        lg:text-4xl 
-        md:text-2xl
-        "
-        >
-          <div className="flex flex-row space-x-4 justify-center items-center">
-            <label htmlFor="title" className="text-5xl font-[PaytoneOne]">
+        <div className="mt-4 flex flex-col space-y-4 font-[Montserrat] lg:text-4xl md:text-2xl">
+          <div className="flex flex-col sm:flex-row space-x-4 justify-center items-center">
+            <label
+              htmlFor="title"
+              className="font-[PaytoneOne] text-3xl md:text-5xl mb-2"
+            >
               Title
             </label>
             <input
               type="text"
               id="title"
               name="title"
-              placeholder="Awesome blog title"
+              placeholder="Captain's log, Stardate 4768.3."
               value={title}
               onChange={onChange}
-              className="border-2 rounded-md p-2"
+              className="w-[20rem] md:w-[30rem] border-2 rounded-md p-3 text-xs sm:text-sm md:text-base lg:text-lg"
             />
           </div>
           <label
@@ -59,15 +52,15 @@ const BlogForm = () => {
             Content
           </label>
           <textarea
-            cols={35}
-            rows={20}
+            cols={50}
+            rows={50}
             type="text"
             id="content"
             name="content"
-            placeholder="Wonderful blog content..."
+            placeholder="The Enterprise is in orbit above a planet whose surface, our sensors tell us, is devoid of all life, a world destroyed and dead for at least a half a million years, yet from it comes a voice, the energy of pure thought, telling us something has survived here for those thousands of centuries. Since exploration and contact with alien intelligence is our primary mission, I've decided to risk the potential dangers and resume contact. Log entry out."
             value={content}
             onChange={onChange}
-            className="border-2 p-4"
+            className="border-2 p-4 text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed"
           />
           <div className="flex justify-center space-x-4 pb-5">
             <button

@@ -1,8 +1,9 @@
 import BlogForm from '../forms/BlogForm';
+import TestBlogForm from '../forms/TestBlogForm';
 
 function BlogFormModal({ close }) {
   return (
-    <div className="pt-5 w-full bg-indigo-100 fixed flex justify-center items-center">
+    <div className=" w-full bg-indigo-100 fixed flex justify-center items-center">
       <div className="container">
         <div className="titleCloseBtn">
           <button onClick={close}>
@@ -25,7 +26,7 @@ function BlogFormModal({ close }) {
 
         <div className="title"></div>
         <div className="body">
-          <BlogForm />
+          <TestBlogForm />
         </div>
         <div className="footer">
           <button>Save</button>
