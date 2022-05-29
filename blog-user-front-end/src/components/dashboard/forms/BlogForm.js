@@ -64,7 +64,6 @@ const BlogForm = () => {
           >
             <TextEditor />
           </div>
-
           <div className="flex justify-center space-x-4 pb-5">
             <button
               type="submit"

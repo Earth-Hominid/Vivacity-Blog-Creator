@@ -7,6 +7,7 @@ import LoginPage from './LoginPage';
 import RegisterPage from './RegisterPage';
 import DashboardPage from './DashboardPage';
 import NotFoundPage from './NotFoundPage';
+import EditorPage from './EditorPage';
 
 const RouteSwitch = () => {
   return (
@@ -18,6 +19,7 @@ const RouteSwitch = () => {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/dashboard" element={<DashboardPage />} />
+          <Route path="/editor" element={<EditorPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>
