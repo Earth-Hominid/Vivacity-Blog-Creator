@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import TextEditor from '../../text-editor/TextEditor';
 import LoadingSpinner from '../../loading-spinner/LoadingSpinner';
 
 const BlogForm = () => {
@@ -51,17 +52,19 @@ const BlogForm = () => {
           >
             Content
           </label>
-          <textarea
-            cols={50}
-            rows={50}
-            type="text"
-            id="content"
-            name="content"
-            placeholder="The Enterprise is in orbit above a planet whose surface, our sensors tell us, is devoid of all life, a world destroyed and dead for at least a half a million years, yet from it comes a voice, the energy of pure thought, telling us something has survived here for those thousands of centuries. Since exploration and contact with alien intelligence is our primary mission, I've decided to risk the potential dangers and resume contact. Log entry out."
-            value={content}
-            onChange={onChange}
-            className="border-2 p-4 text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed"
-          />
+          <div
+            className="
+            border-2
+            p-4
+            text-xs
+            sm:text-sm
+            md:text-base
+            lg:text-lg
+            leading-relaxed"
+          >
+            <TextEditor />
+          </div>
+
           <div className="flex justify-center space-x-4 pb-5">
             <button
               type="submit"
