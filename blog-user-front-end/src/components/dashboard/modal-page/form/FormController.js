@@ -46,7 +46,7 @@ const BlogFormInput = ({ closeModal }) => {
               className="font-[PaytoneOne] text-3xl md:text-5xl mb-2"
             >
               Title
-            </label>{' '}
+            </label>
             <input
               type="text"
               id="title"
