@@ -1,5 +1,3 @@
-import BlogFormModal from './modals/BlogFormModal';
-
 const Welcome = ({ user, openModal }) => {
   return (
     <section className="h-screen dashboard-polka">
