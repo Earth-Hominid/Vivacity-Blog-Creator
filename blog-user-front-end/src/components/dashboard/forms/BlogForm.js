@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import TextEditor from '../../text-editor/TextEditor';
 import LoadingSpinner from '../../loading-spinner/LoadingSpinner';
 
 const BlogForm = () => {
@@ -61,9 +60,7 @@ const BlogForm = () => {
             md:text-base
             lg:text-lg
             leading-relaxed"
-          >
-            <TextEditor />
-          </div>
+          ></div>
           <div className="flex justify-center space-x-4 pb-5">
             <button
               type="submit"
