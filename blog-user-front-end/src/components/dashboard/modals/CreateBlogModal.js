@@ -1,4 +1,5 @@
 import BlogForm from '../forms/BlogForm';
+import BlogFormInput from '../forms/BlogInput';
 
 const CreateBlogModal = ({ closeModal }) => {
   return (
@@ -20,13 +21,13 @@ const CreateBlogModal = ({ closeModal }) => {
                 Close
               </button>
             </div>
-            <div className="modal-body relative p-4 min-h-[1500px]">
+            <div className="modal-body relative p-4">
               <p>
                 Add a title for your blog post and fill out your content below.
                 You can choose to publish your blog immediately or save it to
                 your database and publish it another day.
               </p>
-              <BlogForm />
+              <BlogFormInput />
             </div>
             <div className="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-dotted border-indigo-700 rounded-b-md">
               <button

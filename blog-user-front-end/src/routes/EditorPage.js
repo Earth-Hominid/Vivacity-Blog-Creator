@@ -1,7 +1,12 @@
 import Editor from '../components/editor/Editor';
+import '../styles.css';
 
 const EditorPage = () => {
-  return <Editor />;
+  return (
+    <div>
+      <Editor />
+    </div>
+  );
 };
 
 export default EditorPage;
