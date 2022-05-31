@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Switch } from '@headlessui/react';
-import Editor from '../../editor/Editor';
+import PublishButton from '../../buttons/PublishButton';
+import SaveButton from '../../buttons/SaveButton';
 
 import createBlog from '../../../features/blogs/blogSlice';
 
@@ -9,12 +10,11 @@ const BlogFormInput = () => {
   const [blogFormData, setBlogFormData] = useState({
     title: '',
     content: '',
-    publish: false,
   });
 
   const [enabled, setEnabled] = useState(false);
 
-  const { title, content, publish } = blogFormData;
+  const { title, content } = blogFormData;
 
   const dispatch = useDispatch();
 
@@ -27,12 +27,23 @@ const BlogFormInput = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    dispatch(createBlog({ title, content, publish }));
+    dispatch(createBlog({ title, content }));
     setBlogFormData({
       title: '',
       content: '',
-      publish: false,
     });
+    setEnabled(false);
+  };
+
+  const isPublishSelected = () => {
+    let publish;
+    if (enabled) {
+      publish = true;
+    }
+    if (!enabled) {
+      publish = false;
+    }
+    return publish;
   };
 
   return (
@@ -114,16 +125,7 @@ const BlogFormInput = () => {
             </Switch>
           </Switch.Group>
           <div className="flex justify-center space-x-4 py-5">
-            <button
-              type="submit"
-              className="bg-indgo-500 rounded-lg border-2 bg-sky-500 text-white border-sky-500 hover:text-sky-500 font-bold px-8 py-2 mb-5
-              lg:px-14
-              lg:py-3
-              hover:bg-white
-              "
-            >
-              Save
-            </button>
+            {enabled ? <PublishButton /> : <SaveButton />}
           </div>
         </div>
       </form>
