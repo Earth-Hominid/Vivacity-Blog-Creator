@@ -30,6 +30,43 @@ export const createBlog = createAsyncThunk(
   }
 );
 
+// Delete blog
+export const deleteBlog = createAsyncThunk(
+  'blogs/delete',
+  async (id, thunkAPI) => {
+    try {
+      const token = thunkAPI.getState().auth.user.token;
+      return await blogService.deleteBlog(id, token);
+    } catch (error) {
+      const message =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString();
+      return thunkAPI.rejectWithValue(message);
+    }
+  }
+);
+
+export const updateBlog = createAsyncThunk(
+  'blogs/update',
+  async ({ blogId, blogData }, thunkAPI) => {
+    try {
+      const token = thunkAPI.getState().auth.user.token;
+      return await blogService.deleteBlog(blogId, blogData, token);
+    } catch (error) {
+      const message =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString();
+      return thunkAPI.rejectWithValue(message);
+    }
+  }
+);
+
 export const getBlogs = createAsyncThunk(
   'blogs/getAll',
   async (_, thunkAPI) => {
@@ -78,6 +115,38 @@ export const blogSlice = createSlice({
         state.blogs = action.payload;
       })
       .addCase(getBlogs.rejected, (state, action) => {
+        state.isLoading = false;
+        state.isError = true;
+        state.message = action.payload;
+      })
+      .addCase(deleteBlog.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(deleteBlog.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isSuccess = true;
+        state.blogs = state.blogs.filter(
+          (blog) => blog._id !== action.payload.id
+        );
+      })
+      .addCase(deleteBlog.rejected, (state, action) => {
+        state.isLoading = false;
+        state.isError = true;
+        state.message = action.payload;
+      })
+      .addCase(updateBlog.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(updateBlog.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isSuccess = true;
+        state.blogs = state.blogs.map((blog) =>
+          blog._id !== action.payload.id
+            ? { ...blog, content: action.payload }
+            : blog
+        );
+      })
+      .addCase(updateBlog.rejected, (state, action) => {
         state.isLoading = false;
         state.isError = true;
         state.message = action.payload;

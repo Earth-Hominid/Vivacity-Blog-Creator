@@ -30,6 +30,32 @@ const getBlogs = async (token) => {
   return response.data;
 };
 
-const blogService = { createBlog, getBlogs };
+// Delete user blog
+
+const deleteBlog = async (blogId, token) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+
+  const response = await axios.delete(API_URL + blogId, config);
+
+  return response.data;
+};
+
+const updateBlog = async (blogId, token, blogData) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+
+  const response = await axios.put(API_URL + '/' + blogId, blogData, config);
+
+  return response.data;
+};
+
+const blogService = { createBlog, getBlogs, deleteBlog, updateBlog };
 
 export default blogService;
