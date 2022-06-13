@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import Welcome from './welcome-page/Welcome';
 import CreateBlogModal from './modal-page/CreateBlogModal';
 import LoadingSpinner from '../loading-spinner/LoadingSpinner';
-import { reset } from '../../features/blogs/blogSlice';
+import { reset, getBlogs } from '../../features/blogs/blogSlice';
 
 const Dashboard = () => {
   const [initialPage, setInitialPage] = useState(true);
@@ -25,6 +25,8 @@ const Dashboard = () => {
     if (!user) {
       navigate('/vivacity');
     }
+
+    dispatch(getBlogs());
 
     return () => {
       dispatch(reset());
@@ -48,7 +50,7 @@ const Dashboard = () => {
   return (
     <>
       {initialPage && (
-        <Welcome user={user} openModal={openModal} blogs={blogs} />
+        <Welcome user={user} blogs={blogs} openModal={openModal} />
       )}
       {modal && <CreateBlogModal closeModal={closeModal} />}
     </>
