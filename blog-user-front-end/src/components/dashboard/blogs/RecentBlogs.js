@@ -5,11 +5,11 @@ const RecentBlogs = ({ blogs }) => {
     <>
       <section
         id="recent__blogs"
-        className=" m-4 flex items-center justify-center md:justify-start"
+        className=" m-4 flex items-center justify-center md:justify-start h-full"
       >
         {blogs.length > 0 ? (
           <>
-            <div className="flex flex-col md:flex-row md:space-x-6">
+            <div className="flex flex-col md:flex-row flex-wrap h-full">
               {blogs.map((blog) => (
                 <BlogEntry key={blog.id} blog={blog} />
               ))}
