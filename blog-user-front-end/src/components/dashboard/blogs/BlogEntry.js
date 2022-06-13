@@ -1,11 +1,15 @@
 import { useDispatch } from 'react-redux';
-import { deleteBlog } from '../../../features/blogs/blogSlice';
+import { deleteBlog, updateBlog } from '../../../features/blogs/blogSlice';
 
 const BlogEntry = ({ blog }) => {
   const dispatch = useDispatch();
 
-  const deleteBlogEntry = (blog) => {
+  const deleteBlogEntry = () => {
     return dispatch(deleteBlog(blog._id));
+  };
+
+  const updateBlogEntry = () => {
+    return dispatch(updateBlog(blog._id));
   };
 
   return (
@@ -15,10 +19,10 @@ const BlogEntry = ({ blog }) => {
       m-2 md:m-6 h-auto w-[25rem] md:w-[15rem] md:min-h-[10rem] flex flex-col bg-white px-4 py-1 rounded-lg border-slate-300 border-2 hover:border-indigo-600 hover:border-dotted cursor-pointer hover:shadow-lg hover:bg-indigo-50"
     >
       <div className="w-full flex flex-row items-center justify-end my-2">
-        <button>
+        <button className="hover:bg-indigo-200 mr-2 rounded-lg p-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5 md:w-6 md:h-6 text-indigo-500 hover:text-indigo-700 mr-4"
+            className="h-5 w-5 md:w-6 md:h-6 text-indigo-500 hover:text-indigo-700"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -31,10 +35,13 @@ const BlogEntry = ({ blog }) => {
             />
           </svg>
         </button>
-        <button className="">
+        <button
+          onClick={deleteBlogEntry}
+          className="rounded-lg hover:bg-rose-200 p-1"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5 text-indigo-500 hover:text-rose-700"
+            className="h-5 w-5 md:h-6 md:w-6 text-indigo-500 hover:text-rose-700"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
