@@ -17,19 +17,19 @@ const createBlog = async (blogData, token) => {
   return response.data;
 };
 
-// // Get user blogs
-// const getBlogs = async (token) => {
-//   const config = {
-//     headers: {
-//       Authorization: `Bearer ${token}`,
-//     },
-//   };
+// Get user blogs
+const getBlogs = async (token) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
 
-//   const response = await axios.get(API_URL, config);
+  const response = await axios.get(API_URL, config);
 
-//   return response.data;
-// };
+  return response.data;
+};
 
-const blogService = { createBlog };
+const blogService = { createBlog, getBlogs };
 
 export default blogService;
