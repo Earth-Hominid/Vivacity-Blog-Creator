@@ -27,7 +27,7 @@ const CreateBlogModal = ({ closeModal }) => {
                 You can choose to publish your blog immediately or save it to
                 your database and publish it another day.
               </p>
-              <NewBlogForm />
+              <NewBlogForm closeModal={closeModal} />
             </div>
             <div className="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-dotted border-indigo-700 rounded-b-md">
               <button

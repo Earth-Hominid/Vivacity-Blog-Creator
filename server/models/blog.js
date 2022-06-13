@@ -17,10 +17,9 @@ const BlogSchema = mongoose.Schema(
       type: String,
       required: [true, 'Content needs a text value'],
       min: 2,
-      max: 50,
     },
     publish: {
-      default: false,
+      type: String,
     },
   },
 

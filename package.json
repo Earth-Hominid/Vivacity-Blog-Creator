@@ -8,7 +8,8 @@
     "devstart": "nodemon server/server.js",
     "blog": "npm start --prefix blog-user-front-end",
     "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run devstart\" \"npm run blog\""
+    "dev": "concurrently \"npm run devstart\" \"npm run blog\"",
+    "dev-front": "concurrently \"npm run devstart\" \"npm run client\""
   },
   "repository": {
     "type": "git",

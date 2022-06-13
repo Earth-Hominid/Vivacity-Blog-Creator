@@ -1,4 +1,6 @@
-const Welcome = ({ user, openModal }) => {
+import RecentBlogs from '../blogs/RecentBlogs';
+
+const Welcome = ({ user, openModal, blogs }) => {
   return (
     <section className="h-screen dashboard-polka">
       <div className="pt-8 text-center">
@@ -41,6 +43,7 @@ const Welcome = ({ user, openModal }) => {
           <h2 className="text-4xl ml-5 pt-2 text-slate-800 font bold font-[PaytoneOne]">
             Recent blogs
           </h2>
+          <RecentBlogs blogs={blogs} />
         </div>
       </div>
     </section>
