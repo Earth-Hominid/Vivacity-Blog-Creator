@@ -1,6 +1,6 @@
 import BlogEntry from './BlogEntry';
 
-const RecentBlogs = ({ blogs }) => {
+const RecentBlogs = ({ blogs, openUpdateModal }) => {
   return (
     <>
       <section
@@ -11,7 +11,11 @@ const RecentBlogs = ({ blogs }) => {
           <>
             <div className="flex flex-col md:flex-row flex-wrap h-full">
               {blogs.map((blog) => (
-                <BlogEntry key={blog.id} blog={blog} />
+                <BlogEntry
+                  key={blog.id}
+                  blog={blog}
+                  openUpdateModal={openUpdateModal}
+                />
               ))}
             </div>
           </>
