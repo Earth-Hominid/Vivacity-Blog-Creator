@@ -11,11 +11,11 @@ const Navigation = () => {
   const logoutUser = () => {
     dispatch(logout());
     dispatch(reset());
-    navigate('/vivacity');
+    navigate('/');
   };
 
   const goHome = () => {
-    navigate('/vivacity');
+    navigate('/');
   };
 
   return (
