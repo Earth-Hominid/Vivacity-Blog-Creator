@@ -1,5 +1,4 @@
-import FormController from './form/FormController';
-import NewBlogForm from './form/NewBlogForm';
+import NewBlogForm from '../form/NewBlogForm';
 
 const CreateBlogModal = ({ closeModal }) => {
   return (
