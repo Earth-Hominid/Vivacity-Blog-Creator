@@ -1,6 +1,6 @@
 import RecentBlogs from '../blogs/RecentBlogs';
 
-const Welcome = ({ user, openModal, blogs }) => {
+const Welcome = ({ user, openModal, blogs, openUpdateModal }) => {
   return (
     <section className="h-screen dashboard-polka">
       <div className="pt-8 text-center">
@@ -14,7 +14,7 @@ const Welcome = ({ user, openModal, blogs }) => {
         </p>
         <div className="flex flex-col">
           <h2 className="text-4xl ml-5 pt-2 text-slate-800 font bold font-[PaytoneOne]">
-            Create new blog
+            Create new blog entry
           </h2>
           <button
             onClick={openModal}
@@ -41,9 +41,9 @@ const Welcome = ({ user, openModal, blogs }) => {
         </div>
         <div className="mt-5 flex flex-col">
           <h2 className="text-4xl ml-5 pt-2 text-slate-800 font bold font-[PaytoneOne]">
-            Recent blogs
+            Recent blog entries
           </h2>
-          <RecentBlogs blogs={blogs} />
+          <RecentBlogs blogs={blogs} openUpdateModal={openUpdateModal} />
         </div>
       </div>
     </section>
