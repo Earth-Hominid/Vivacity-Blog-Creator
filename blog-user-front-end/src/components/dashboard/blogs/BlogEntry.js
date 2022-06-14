@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { deleteBlog, updateBlog } from '../../../features/blogs/blogSlice';
 
-const BlogEntry = ({ blog }) => {
+const BlogEntry = ({ blog, openUpdateModal }) => {
   const dispatch = useDispatch();
 
   const deleteBlogEntry = () => {
@@ -16,10 +16,13 @@ const BlogEntry = ({ blog }) => {
     <div
       id="blog"
       className="
-      m-2 md:m-6 h-auto w-[25rem] md:w-[15rem] md:min-h-[10rem] flex flex-col bg-white px-4 py-1 rounded-lg border-slate-300 border-2 hover:border-indigo-600 hover:border-dotted cursor-pointer hover:shadow-lg hover:bg-indigo-50"
+      m-2 md:m-6 h-auto w-[25rem] md:w-[15rem] md:min-h-[10rem] flex flex-col bg-white px-4 py-1 rounded-lg border-slate-300 border-2 hover:border-indigo-600 hover:border-dotted hover:shadow-lg hover:bg-indigo-50"
     >
       <div className="w-full flex flex-row items-center justify-end my-2">
-        <button className="hover:bg-indigo-200 mr-2 rounded-lg p-1">
+        <button
+          onClick={openUpdateModal}
+          className="hover:bg-indigo-200 mr-2 rounded-lg p-1"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-5 w-5 md:w-6 md:h-6 text-indigo-500 hover:text-indigo-700"
