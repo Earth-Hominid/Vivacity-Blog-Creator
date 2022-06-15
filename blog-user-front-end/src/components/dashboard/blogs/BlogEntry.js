@@ -92,7 +92,9 @@ const BlogEntry = ({ blog }) => {
         {blog.title}
       </h2>
       <h4 className="text-xs md:text-sm font-bold text-slate-400 mt-2 pb-6">
-        {new Date(blog.updatedAt).toLocaleString('en-US')}
+        {'Created: ' + new Date(blog.createdAt).toLocaleString('en-US')}
+        <br></br>
+        {'Updated: ' + new Date(blog.updatedAt).toLocaleString('en-US')}
       </h4>
       {updateModal && <UpdateBlogForm blog={blog} />}
     </div>

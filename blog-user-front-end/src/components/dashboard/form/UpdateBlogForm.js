@@ -7,10 +7,11 @@ const UpdateBlogForm = ({ blog }) => {
   const [blogTitle, setBlogTitle] = useState({ title: blog.title });
   const [blogContent, setBlogContent] = useState({ content: blog.content });
 
-  const dispatch = useDispatch();
-
   const { title } = blogTitle;
   const { content } = blogContent;
+  const blogId = blog._id;
+
+  const dispatch = useDispatch();
 
   const onTitleChange = (e) => {
     setBlogTitle((prevState) => ({
@@ -26,16 +27,20 @@ const UpdateBlogForm = ({ blog }) => {
     }));
   };
 
+  function refreshPage() {
+    window.location.reload(false);
+  }
+
   const onSubmit = (e) => {
     e.preventDefault();
 
-    const blogInfo = {
-      id: blog._id,
+    const blogData = {
       title,
       content,
     };
 
-    dispatch(updateBlog({ blogInfo }));
+    dispatch(updateBlog({ blogId, blogData }));
+    refreshPage();
   };
 
   return (

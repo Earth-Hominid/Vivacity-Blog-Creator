@@ -1,8 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import blogService from './blogService';
 
-const user = JSON.parse(localStorage.getItem('user'));
-
 const initialState = {
   blogs: [],
   isError: false,
@@ -30,13 +28,12 @@ export const createBlog = createAsyncThunk(
   }
 );
 
-// Delete blog
-export const deleteBlog = createAsyncThunk(
-  'blogs/delete',
-  async (id, thunkAPI) => {
+export const updateBlog = createAsyncThunk(
+  'blogs/update',
+  async ({ blogId, blogData }, thunkAPI) => {
     try {
       const token = thunkAPI.getState().auth.user.token;
-      return await blogService.deleteBlog(id, token);
+      return await blogService.updateBlog(blogId, blogData, token);
     } catch (error) {
       const message =
         (error.response &&
@@ -49,12 +46,13 @@ export const deleteBlog = createAsyncThunk(
   }
 );
 
-export const updateBlog = createAsyncThunk(
-  'blogs/update',
-  async ({ blogId, blogData }, thunkAPI) => {
+// Delete blog
+export const deleteBlog = createAsyncThunk(
+  'blogs/delete',
+  async (id, thunkAPI) => {
     try {
       const token = thunkAPI.getState().auth.user.token;
-      return await blogService.deleteBlog(blogId, blogData, token);
+      return await blogService.deleteBlog(id, token);
     } catch (error) {
       const message =
         (error.response &&
@@ -142,7 +140,11 @@ export const blogSlice = createSlice({
         state.isSuccess = true;
         state.blogs = state.blogs.map((blog) =>
           blog._id !== action.payload.id
-            ? { ...blog, content: action.payload }
+            ? {
+                ...blog,
+                title: action.payload.title,
+                content: action.payload.content,
+              }
             : blog
         );
       })

@@ -24,7 +24,7 @@ const Dashboard = () => {
     }
 
     if (!user) {
-      navigate('/vivacity');
+      navigate('/');
     }
 
     dispatch(getBlogs());

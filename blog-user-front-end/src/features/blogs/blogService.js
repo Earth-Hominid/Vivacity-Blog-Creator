@@ -44,7 +44,7 @@ const deleteBlog = async (blogId, token) => {
   return response.data;
 };
 
-const updateBlog = async (blogId, token, blogData) => {
+const updateBlog = async (blogId, blogData, token) => {
   const config = {
     headers: {
       Authorization: `Bearer ${token}`,
