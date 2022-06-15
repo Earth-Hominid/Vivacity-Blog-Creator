@@ -87,7 +87,7 @@ const NewBlogForm = ({ closeModal }) => {
             placeholder="The Enterprise is in orbit above a planet whose surface, our sensors tell us, is devoid of all life, a world destroyed and dead for at least a half a million years, yet from it comes a voice, the energy of pure thought, telling us something has survived here for those thousands of centuries. Since exploration and contact with alien intelligence is our primary mission, I've decided to risk the potential dangers and resume contact. Log entry out."
           />
           <div className="flex justify-center space-x-4 py-5">
-            <SaveButton onSubmit={onSubmit} />
+            <SaveButton onSubmit={onSubmit} title={'Save Blog'} />
           </div>
         </div>
       </form>
