@@ -12,7 +12,7 @@ const RecentBlogs = ({ blogs, openUpdateModal }) => {
             <div className="flex flex-col md:flex-row flex-wrap h-full">
               {blogs.map((blog) => (
                 <BlogEntry
-                  key={blog.id}
+                  key={blog._id}
                   blog={blog}
                   openUpdateModal={openUpdateModal}
                 />
