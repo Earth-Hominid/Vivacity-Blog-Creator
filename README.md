@@ -31,5 +31,4 @@ The majority of CSS was created using the TailwindCSS library. The website is su
 - [Mongoose](https://mongoosejs.com/)
 - [Async](https://caolan.github.io/async/v3/)
 - [Colors, used in console to show MongoDB connection](https://www.npmjs.com/package/colors)
-- [Lexical Extensible Text Editor](https://github.com/facebook/lexical)
 - [dotenv](https://www.npmjs.com/package/dotenv)
