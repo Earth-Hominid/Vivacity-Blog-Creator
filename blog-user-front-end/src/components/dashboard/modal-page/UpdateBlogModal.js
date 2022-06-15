@@ -22,10 +22,7 @@ const updateBlogModal = ({ closeUpdateModal, blogs }) => {
             </div>
             <div className="modal-body relative p-4">
               <p>Once you are happy with your changes, select save below.</p>
-              <UpdateBlogForm
-                closeUpdateModal={closeUpdateModal}
-                blogs={blogs}
-              />
+              <UpdateBlogForm closeUpdateModal={closeUpdateModal} />
             </div>
             <div className="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-dotted border-indigo-700 rounded-b-md">
               <button

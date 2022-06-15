@@ -3,9 +3,9 @@ import { useDispatch } from 'react-redux';
 import { updateBlog } from '../../../features/blogs/blogSlice';
 import SaveButton from '../../buttons/SaveButton';
 
-const UpdateBlogForm = ({ closeUpdateModal, blogs }) => {
-  const [blogTitle, setBlogTitle] = useState({ title: '' });
-  const [blogContent, setBlogContent] = useState({ content: '' });
+const UpdateBlogForm = ({ blog }) => {
+  const [blogTitle, setBlogTitle] = useState({ title: blog.title });
+  const [blogContent, setBlogContent] = useState({ content: blog.content });
 
   const dispatch = useDispatch();
 
@@ -30,14 +30,12 @@ const UpdateBlogForm = ({ closeUpdateModal, blogs }) => {
     e.preventDefault();
 
     const blogInfo = {
+      id: blog._id,
       title,
       content,
     };
 
-    dispatch(updateBlog(blogInfo));
-    setBlogTitle('');
-    setBlogContent('');
-    closeUpdateModal();
+    dispatch(updateBlog({ blogInfo }));
   };
 
   return (
@@ -85,7 +83,7 @@ const UpdateBlogForm = ({ closeUpdateModal, blogs }) => {
             rows={30}
           />
           <div className="flex justify-center space-x-4 py-5">
-            <SaveButton onSubmit={onSubmit} />
+            <SaveButton onSubmit={onSubmit} title={'Save Changes'} />
           </div>
         </div>
       </form>
