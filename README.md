@@ -4,7 +4,8 @@
 
 A blog creation app built with the MERN stack.
 
-<img width="677" alt="homepage" src="https://user-images.githubusercontent.com/66766688/174124259-79d73393-63d6-4a43-bea2-f70211624c97.png">
+<img width="1191" alt="homepge-wide" src="https://user-images.githubusercontent.com/66766688/174128826-3d2dd895-0644-4b23-82a7-96a78d94288d.png">
+
 
 ## Description
 
