@@ -10,14 +10,21 @@ A blog creation app built with the MERN stack.
 
 Blog Creator was written using the Model-View-Controller architecture and the RESTful API framework. The application allows a user to create an account with email. Once they are logged in, and authenticated, they can create and save blog entries.
 
+<img width="696" alt="sign-in-1" src="https://user-images.githubusercontent.com/66766688/174128519-78a6c3fd-4ef7-485a-a98b-f692d515733f.png">
+
 ### Backend
 
 The server is written with Express. User details and blog entries are saved in a MongoDB database. Mongoose is utilized as the ORM. 
 Blog entries are attached to their account specifically using JSON Web token and stored in MongoDB. User passwords are encrypted and stored in MongoDB using the BcryptJS package. 
 
+<img width="910" alt="blog-full" src="https://user-images.githubusercontent.com/66766688/174128619-3089ef03-e493-4a9b-9bfa-d7101348ad6f.png">
+
 ### Frontend
 
 Redux and Redux toolkit are utilized for state-management. The majority of CSS was created using the TailwindCSS library. The website is suitable for both smartphones and large monitors. The UI was designed for mobile use first.
+
+<img width="695" alt="entry" src="https://user-images.githubusercontent.com/66766688/174128644-839289e0-0206-483c-a546-b77df4974929.png">
+
 
 ### Dependencies
 
