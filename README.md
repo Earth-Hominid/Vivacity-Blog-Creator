@@ -22,7 +22,7 @@ Blog entries are attached to their account specifically using JSON Web token and
 
 ### Frontend
 
-Redux and Redux toolkit are utilized for state-management. The majority of CSS was created using the TailwindCSS library. The website is suitable for both smartphones and large monitors. The UI was designed for mobile use first.
+Redux and Redux toolkit are utilized for state-management. The majority of CSS was created using the TailwindCSS library along with Styled-Components. The website is suitable for both smartphones and large monitors. The UI was designed for mobile use first.
 
 <img width="695" alt="entry" src="https://user-images.githubusercontent.com/66766688/174128644-839289e0-0206-483c-a546-b77df4974929.png">
 
