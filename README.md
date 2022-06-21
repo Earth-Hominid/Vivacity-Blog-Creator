@@ -4,6 +4,8 @@
 
 A blog creation app built with the MERN stack.
 
+Click here for the [live demo](). (The application will take a few seconds to start from sleep, as it is on the heroku free plan.)
+
 <img width="1166" alt="Screen Shot 2022-06-21 at 12 34 31 PM" src="https://user-images.githubusercontent.com/66766688/174841400-0d713c58-45c0-4d4a-b200-3773eed909af.png">
 
 ## Description
