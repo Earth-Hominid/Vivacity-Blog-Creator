@@ -4,9 +4,13 @@
 
 A blog creation app built with the MERN stack.
 
+<img width="1166" alt="Screen Shot 2022-06-21 at 12 34 31 PM" src="https://user-images.githubusercontent.com/66766688/174841400-0d713c58-45c0-4d4a-b200-3773eed909af.png">
+
 ## Description
 
 Blog Creator was written using the Model-View-Controller architecture and the RESTful API framework. The application allows a user to create an account with email. Once they are logged in, and authenticated, they can create and save blog entries.
+
+<img width="1164" alt="Screen Shot 2022-06-21 at 12 36 08 PM" src="https://user-images.githubusercontent.com/66766688/174841513-64c8e86b-881a-4719-9ab4-68e9f2ca4bae.png">
 
 ## Backend
 
@@ -18,9 +22,13 @@ Authentication is implemented by using JSON Web Token authentication. JWT's are 
 
 User passwords are encrypted and stored in MongoDB using the BcryptJS package. Bcrypt is password hashing algorithm which protects against Rainbow attacks by utilizing a salt and against brute force attacks.
 
+<img width="1158" alt="Screen Shot 2022-06-21 at 12 34 02 PM" src="https://user-images.githubusercontent.com/66766688/174841691-7bd3f600-9932-4be8-b190-7bfa71e52858.png">
+
 ### Frontend
 
 Redux and Redux toolkit are utilized for state-management. The majority of CSS was created using the TailwindCSS library along with Styled-Components. The website is suitable for both smartphones and large monitors. The UI was designed for mobile use first.
+
+<img width="1161" alt="Screen Shot 2022-06-21 at 12 36 55 PM" src="https://user-images.githubusercontent.com/66766688/174841903-9ea49689-8b63-4df6-8c9c-21d32d4e329c.png">
 
 ### Dependencies
 
