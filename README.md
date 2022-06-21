@@ -8,7 +8,7 @@ A blog creation app built with the MERN stack.
 
 ## Description
 
-Blog Creator was written using the Model-View-Controller architecture and the RESTful API framework. The application allows a user to create an account with email. Once they are logged in, and authenticated, they can create and save blog entries. Authentication is implemented by using JSON Web Token authentication. JWT's are signed using a secret along with the HMAC algorithm.
+Blog Creator was written using the Model-View-Controller architecture and the RESTful API framework. The application allows a user to create an account with email. Once they are logged in, and authenticated, they can create and save blog entries.
 
 <img width="696" alt="sign-in-1" src="https://user-images.githubusercontent.com/66766688/174128519-78a6c3fd-4ef7-485a-a98b-f692d515733f.png">
 
@@ -18,7 +18,7 @@ The server is written with Express. User details and blog entries are saved in a
 
 ### Security Details
 
-Blog entries are attached to their account specifically using JSON Web token and stored in MongoDB.
+Authentication is implemented by using JSON Web Token authentication. JWT's are signed using a secret along with the HMAC algorithm. Blog entries are attached to their account specifically using JSON Web token and stored in MongoDB.
 
 User passwords are encrypted and stored in MongoDB using the BcryptJS package. Bcrypt is password hashing algorithm which protects against Rainbow attacks by utilizing a salt and against brute force attacks.
 
