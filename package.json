@@ -4,7 +4,7 @@
   "description": "A blog creator application built with the MERN stack.",
   "main": "server.js",
   "scripts": {
-    "start": "node server/server/.js",
+    "start": "node server/server.js",
     "devstart": "nodemon server/server.js",
     "client": "npm start --prefix client",
     "dev-front": "concurrently \"npm run devstart\" \"npm run client\"",
