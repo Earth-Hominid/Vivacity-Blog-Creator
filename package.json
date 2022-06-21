@@ -1,7 +1,7 @@
 {
   "name": "blog-creator",
   "version": "1.0.0",
-  "description": "A blog creator application built witht the MERN stack.",
+  "description": "A blog creator application built with the MERN stack.",
   "main": "server.js",
   "scripts": {
     "start": "node server/server/.js",
