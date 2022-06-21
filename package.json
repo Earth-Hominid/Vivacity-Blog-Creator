@@ -1,7 +1,7 @@
 {
-  "name": "blog-maker",
+  "name": "blog-creator",
   "version": "1.0.0",
-  "description": "Blog maker backend api.",
+  "description": "A blog creator application built witht the MERN stack.",
   "main": "server.js",
   "scripts": {
     "start": "node server/server/.js",
@@ -21,7 +21,7 @@
   "bugs": {
     "url": "https://github.com/Earth-Hominid/blog-maker-api/issues"
   },
-  "homepage": "https://github.com/Earth-Hominid/blog-maker-api#readme",
+  "homepage": "https://github.com/Earth-Hominid/Blog-Creator-API",
   "dependencies": {
     "async": "^3.2.3",
     "bcryptjs": "^2.4.3",
