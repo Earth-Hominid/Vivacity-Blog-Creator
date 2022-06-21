@@ -6,17 +6,21 @@ A blog creation app built with the MERN stack.
 
 <img width="1191" alt="homepge-wide" src="https://user-images.githubusercontent.com/66766688/174128826-3d2dd895-0644-4b23-82a7-96a78d94288d.png">
 
-
 ## Description
 
-Blog Creator was written using the Model-View-Controller architecture and the RESTful API framework. The application allows a user to create an account with email. Once they are logged in, and authenticated, they can create and save blog entries.
+Blog Creator was written using the Model-View-Controller architecture and the RESTful API framework. The application allows a user to create an account with email. Once they are logged in, and authenticated, they can create and save blog entries. Authentication is implemented by using JSON Web Token authentication. JWT's are signed using a secret along with the HMAC algorithm.
 
 <img width="696" alt="sign-in-1" src="https://user-images.githubusercontent.com/66766688/174128519-78a6c3fd-4ef7-485a-a98b-f692d515733f.png">
 
-### Backend
+## Backend
 
-The server is written with Express. User details and blog entries are saved in a MongoDB database. Mongoose is utilized as the ORM. 
-Blog entries are attached to their account specifically using JSON Web token and stored in MongoDB. User passwords are encrypted and stored in MongoDB using the BcryptJS package. 
+The server is written with Express. User details and blog entries are saved in a MongoDB database. Mongoose is utilized as the ORM.
+
+### Security Details
+
+Blog entries are attached to their account specifically using JSON Web token and stored in MongoDB.
+
+User passwords are encrypted and stored in MongoDB using the BcryptJS package. Bcrypt is password hashing algorithm which protects against Rainbow attacks by utilizing a salt and against brute force attacks.
 
 <img width="910" alt="blog-full" src="https://user-images.githubusercontent.com/66766688/174128619-3089ef03-e493-4a9b-9bfa-d7101348ad6f.png">
 
@@ -26,7 +30,6 @@ Redux and Redux toolkit are utilized for state-management. The majority of CSS w
 
 <img width="695" alt="entry" src="https://user-images.githubusercontent.com/66766688/174128644-839289e0-0206-483c-a546-b77df4974929.png">
 
-
 ### Dependencies
 
 - [Express.js](https://expressjs.com/)
@@ -34,6 +37,8 @@ Redux and Redux toolkit are utilized for state-management. The majority of CSS w
 - [JSON WEB TOKEN](https://jwt.io/)
 - [BcryptJS is used to encrypt passwords.](https://openbase.com/js/bcryptjs/documentation)
 - [Mongoose](https://mongoosejs.com/)
+- [Tailwindcss](https://tailwindcss.com/)
+- [Tailwind Styled Components](https://www.npmjs.com/package/tailwind-styled-components)
 - [Async](https://caolan.github.io/async/v3/)
 - [Colors, used in console to show MongoDB connection](https://www.npmjs.com/package/colors)
 - [dotenv](https://www.npmjs.com/package/dotenv)
