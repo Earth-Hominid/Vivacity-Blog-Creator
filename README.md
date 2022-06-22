@@ -12,7 +12,7 @@ Click here for the [live demo](https://blog-creator-mern-app.herokuapp.com/). (T
 
 Blog Creator was written using the Model-View-Controller architecture and the RESTful API framework. The application allows a user to create an account with email. Once they are logged in, and authenticated, they can create and save blog entries.
 
-<img width="1164" alt="Screen Shot 2022-06-21 at 12 36 08 PM" src="https://user-images.githubusercontent.com/66766688/174841513-64c8e86b-881a-4719-9ab4-68e9f2ca4bae.png">
+<img width="1153" alt="Screen Shot 2022-06-22 at 11 37 32 AM" src="https://user-images.githubusercontent.com/66766688/175056913-2f953c80-2842-4119-9f76-a8117e3eceae.png">
 
 ## Backend
 
