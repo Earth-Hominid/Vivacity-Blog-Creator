@@ -6,13 +6,13 @@ A blog creation app built with the MERN stack.
 
 Click here for the [live demo](https://blog-creator-mern-app.herokuapp.com/). (The application will take a few seconds to start from sleep, as it is on the heroku free plan.)
 
-<img width="1166" alt="Screen Shot 2022-06-21 at 12 34 31 PM" src="https://user-images.githubusercontent.com/66766688/174841400-0d713c58-45c0-4d4a-b200-3773eed909af.png">
+<img width="1153" alt="Screen Shot 2022-06-22 at 11 37 32 AM" src="https://user-images.githubusercontent.com/66766688/175056913-2f953c80-2842-4119-9f76-a8117e3eceae.png">
 
 ## Description
 
 Blog Creator was written using the Model-View-Controller architecture and the RESTful API framework. The application allows a user to create an account with email. Once they are logged in, and authenticated, they can create and save blog entries.
 
-<img width="1153" alt="Screen Shot 2022-06-22 at 11 37 32 AM" src="https://user-images.githubusercontent.com/66766688/175056913-2f953c80-2842-4119-9f76-a8117e3eceae.png">
+<img width="1164" alt="Screen Shot 2022-06-21 at 12 36 08 PM" src="https://user-images.githubusercontent.com/66766688/175057201-b602da44-d2be-4113-bdfa-0410bf435fb3.png">
 
 ## Backend
 
