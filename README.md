@@ -22,7 +22,7 @@ The server is written with Express. User details and blog entries are saved in a
 
 Authentication is implemented by using JSON Web Token authentication. JWT's are signed using a secret along with the HMAC algorithm. Blog entries are attached to their account specifically using JSON Web token and stored in MongoDB.
 
-User passwords are encrypted and stored in MongoDB using the BcryptJS package. Bcrypt is password hashing algorithm which protects against Rainbow attacks by utilizing a salt and against brute force attacks.
+User passwords are encrypted and stored in MongoDB using the BcryptJS package. Bcrypt is a password hashing algorithm which protects against Rainbow attacks by utilizing a salt and against brute force attacks.
 
 <img width="1158" alt="Screen Shot 2022-06-21 at 12 34 02 PM" src="https://user-images.githubusercontent.com/66766688/174841691-7bd3f600-9932-4be8-b190-7bfa71e52858.png">
 
