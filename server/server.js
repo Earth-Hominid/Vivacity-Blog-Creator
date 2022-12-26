@@ -4,11 +4,12 @@ const colors = require('colors');
 const dotenv = require('dotenv').config();
 const { errorHandler } = require('./middleware/errorMiddleware');
 const connectDatabase = require('./config/db');
+const helmet = require('helmet');
 const port = process.env.PORT || 8001;
 
 connectDatabase();
 const app = express();
-
+app.use(helmet());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
