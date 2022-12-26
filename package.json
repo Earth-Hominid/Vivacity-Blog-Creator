@@ -9,8 +9,8 @@
   "scripts": {
     "start": "node server/server.js",
     "devstart": "nodemon server/server.js",
-    "client": "npm start --prefix client",
-    "dev-front": "concurrently \"npm run devstart\" \"npm run client\""
+    "client": "yarn start --prefix client",
+    "dev-front": "concurrently \"yarn run devstart\" \"yarn run client\""
   },
   "repository": {
     "type": "git",
