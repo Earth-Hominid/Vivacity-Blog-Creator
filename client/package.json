@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "proxy": "http://localhost:8001/",
   "private": true,
+  "engines": {
+    "node": "19.3.0"
+  },
   "dependencies": {
     "@headlessui/react": "^1.6.4",
     "@lexical/react": "^0.2.9",
