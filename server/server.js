@@ -8,7 +8,6 @@ const port = process.env.PORT || 8001;
 
 connectDatabase();
 const app = express();
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
@@ -17,7 +16,7 @@ app.use('/api/users', require('./routes/userRoutes'));
 
 // Serve frontend routes
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../client/public')));
+  app.use(express.static(path.join(__dirname, '../client/build')));
 } else {
   app.get('/', (req, res) => res.send('Set to production'));
 }
