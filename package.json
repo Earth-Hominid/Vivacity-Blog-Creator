@@ -10,7 +10,8 @@
     "start": "node server/server.js",
     "devstart": "nodemon server/server.js",
     "client": "yarn start --prefix client",
-    "dev-front": "concurrently \"yarn run devstart\" \"yarn run client\""
+    "dev-front": "concurrently \"yarn run devstart\" \"yarn run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "repository": {
     "type": "git",
