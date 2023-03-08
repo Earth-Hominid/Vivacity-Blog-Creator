@@ -4,7 +4,7 @@
 
 A free platform to create and host your own blog.
 
-Click here for the [live demo](https://vivacity-blog.herokuapp.com/){target="_blank"}. (The application will take a few seconds to start from sleep.)
+Click here for the [live demo](https://vivacity-blog.herokuapp.com/{target="_blank"}). (The application will take a few seconds to start from sleep.)
 
 <img width="1153" alt="Screen Shot 2022-06-22 at 11 37 32 AM" src="https://user-images.githubusercontent.com/66766688/175056913-2f953c80-2842-4119-9f76-a8117e3eceae.png">
 
